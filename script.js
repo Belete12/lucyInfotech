@@ -143,19 +143,57 @@ function startQuiz() {
   document.getElementById("quiz-result").innerHTML = "";
 }
 
+// function submitQuiz() {
+//   let score = 0;
+
+//   selectedQuestions.forEach((q, i) => {
+//     const selected = document.querySelector(`input[name="q${i}"]:checked`);
+//     if (selected && selected.value === q.answer) {
+//       score++;
+//     }
+//   });
+
+//   document.getElementById("quiz-result").innerHTML = `<h3>You scored ${score} out of ${selectedQuestions.length}</h3>`;
+// }
 function submitQuiz() {
   let score = 0;
 
   selectedQuestions.forEach((q, i) => {
     const selected = document.querySelector(`input[name="q${i}"]:checked`);
-    if (selected && selected.value === q.answer) {
-      score++;
+    const options = document.getElementsByName(`q${i}`);
+
+    options.forEach(opt => {
+      const label = opt.parentElement;
+      label.classList.remove("correct-answer", "wrong-answer", "reset-style");
+      label.classList.add("reset-style");
+    });
+
+    if (selected) {
+      const selectedLabel = selected.parentElement;
+
+      if (selected.value === q.answer) {
+        score++;
+        selectedLabel.classList.remove("reset-style");
+        selectedLabel.classList.add("correct-answer");
+      } else {
+        selectedLabel.classList.remove("reset-style");
+        selectedLabel.classList.add("wrong-answer");
+      }
     }
+
+    // Always highlight correct answer
+    options.forEach(opt => {
+      if (opt.value === q.answer) {
+        const label = opt.parentElement;
+        label.classList.remove("reset-style");
+        label.classList.add("correct-answer");
+      }
+    });
   });
 
-  document.getElementById("quiz-result").innerHTML = `<h3>You scored ${score} out of ${selectedQuestions.length}</h3>`;
+  document.getElementById("quiz-result").innerHTML =
+    `<h3>You scored ${score} out of ${selectedQuestions.length}</h3>`;
 }
-
 
 function handleSubjectChange() {
   const subject = document.getElementById("subject").value;

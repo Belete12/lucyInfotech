@@ -62,3 +62,22 @@ hr {
         background-color: seagreen;
       }
     }
+
+    .correct-answer {
+      background-color: #ccffcc; /* light green */
+      color: green;
+      font-weight: bold;
+    }
+    
+    .wrong-answer {
+      background-color: #ffcccc; /* light red */
+      color: red;
+      font-weight: bold;
+    }
+    
+    .reset-style {
+      background-color: transparent;
+      color: black;
+      font-weight: normal;
+    }
+    
