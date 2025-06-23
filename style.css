@@ -1,0 +1,62 @@
+/* body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+} */
+h1 {
+  color: #333;
+}
+select, input, button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+}
+.question {
+  margin-top: 15px;
+}
+.answers {
+  margin-left: 20px;
+}
+#quiz-result {
+  margin-top: 15px;
+  font-weight: bold;
+}
+hr {
+  margin: 30px 0;
+}
+
+    /* default color*/
+ 
+    body {
+      background-color: aquamarine;
+ 
+    }
+ 
+    /* for Mobile device */
+    @media (min-width:319px) and (max-width:480px) {
+ 
+      body{
+       background-color: lightsalmon;
+     
+    }
+    }
+/* for Ipad */
+    @media (min-width:481px) and (max-width:1200px) {
+      body{
+       background-color: powderblue;
+      }
+    }
+/* laptop */
+    @media  (min-width:1201px) and (max-width:1600px) {
+      body{
+        /* background-color: limegreen; */
+        background-color:#244855;
+      }
+    }
+    /* desktop */
+    @media  (min-width:1601px) {
+      body{
+        background-color: seagreen;
+      }
+    }
