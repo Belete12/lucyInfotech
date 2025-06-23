@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kids Quiz: Count & ABC</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="home.js"></script>
+</head>
+<body>
+    <h1>Welcome Abimelek </h1>
+    <img src="./Image/Abi.jpg" alt="my sweet son" width="200" height="200" />
+  
+  <h1> Count & ABC</h1>
+
+  <label for="quizType">Choose Quiz:</label>
+  <select id="quizType" onchange="setupQuiz()">
+    <option value="number">Number Quiz</option>
+    <option value="letter">ABC Quiz</option>
+  </select>
+
+  <label for="level">Level:</label>
+  <select id="level">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+
+  <button onclick="generateQuestion()">Start</button>
+
+  <div id="question"></div>
+  <input type="text" id="answer" placeholder="Your answer" />
+  <button onclick="checkAnswer()">Submit</button>
+
+  <div id="result"></div>
+  <div id="score">Score: 0 / 0</div>
+
+</body>
+</html>

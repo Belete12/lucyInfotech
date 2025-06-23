@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All-in-One Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <h1>Welcome Aman </h1>
+  <img src="./Image/Aman.PNG" alt="my sweet son" width="200" height="200" />
+
+  <hr>
+
+  <h2>Multi-Level Subject Quiz</h2>
+
+<label for="subject">Select Subject:</label> 
+
+  <select id="subject" onchange="handleSubjectChange()">
+    <option value="math">Math</option>  
+    <option value="science">Science</option>
+    <option value="Geography">Geography</option>
+  </select>
+  
+  <label for="operation">Operation:</label>
+  <select id="operation">
+    <option value="addition">Addition</option>
+    <option value="subtraction">Subtraction</option>
+    <option value="multiplication">Multiplication</option>
+    <option value="division">Division</option>
+  </select>
+
+  <label for="levelSelect">Difficulty:</label>
+  <select id="levelSelect">
+    <option value="beginner">Beginner</option>
+    <option value="intermediate">Intermediate</option>
+    <option value="advanced">Advanced</option>
+  </select>
+
+  <button onclick="startQuiz()">Start Quiz</button>
+
+  <div id="quiz-container"></div>
+  <button onclick="submitQuiz()" style="display:none;" id="submit-btn">Submit Answers</button>
+  <div id="quiz-result"></div>
+
+
+</body>
+</html>

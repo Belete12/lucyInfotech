@@ -3,7 +3,11 @@ const quizData = {
   science: {
     beginner: [
       { question: "What planet do we live on?", options: ["Mars", "Earth", "Venus", "Jupiter"], answer: "Earth" },
-      { question: "Water freezes at ___ °C?", options: ["0", "100", "10", "-5"], answer: "0" }
+      { question: "Which planet is known for its beautiful rings?", options: ["Earth", "Venus", "Saturn"], answer: "Saturn" },
+      { question: "What is the name of the planet closest to the sun?", options: ["Mercury", "Earth", "pluto"], answer: "Mercury" },
+      { question: "Which planet is known as the Red Planet?", options: ["Jupiter", "Mars", "Earth"], answer: "Mars" },
+      { question: "What is the name of the largest planet in our solar system?", options: ["Jupiter", "saturn", "Earth"], answer: "Jupiter" }
+      
     ],
     intermediate: [
       { question: "What gas do plants absorb?", options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"], answer: "Carbon Dioxide" },
@@ -151,3 +155,20 @@ function submitQuiz() {
 
   document.getElementById("quiz-result").innerHTML = `<h3>You scored ${score} out of ${selectedQuestions.length}</h3>`;
 }
+
+
+function handleSubjectChange() {
+  const subject = document.getElementById("subject").value;
+  const operationSelect = document.getElementById("operation");
+
+  if (subject.toLowerCase() === "math") {
+    operationSelect.disabled = false;
+    operationSelect.style.opacity = "1";
+  } else {
+    operationSelect.disabled = true;
+    operationSelect.style.opacity = "0.5";
+  }
+}
+
+
+handleSubjectChange();
